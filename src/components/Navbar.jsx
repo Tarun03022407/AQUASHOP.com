@@ -65,6 +65,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import { RemoveUserDataAfter } from "../store/Auth/auth.action";
 import { getItem, setItem } from "../utility/localStorage";
+import HoverCosmetics from "./AdminPage/hovercosmetic";
+
 const Navbar = () => {
   const toast = useToast();
   const navigateTo = useNavigate();
@@ -232,8 +234,10 @@ const abcd=()=>{
                     <Box as="button" onClick={() => GoTo("/electronics")}>
                       Electronics
                     </Box>
-                    <Box as="button" onClick={() => GoTo("/cosmetic")}>
+                    <Box  as="button" onClick={() => GoTo("/cosmetic")}>
                       Cosmetics
+                 {/* <HoverCosmetics /> */}
+
                     </Box>
                     <Box as="button" onClick={() => GoTo("/health")}>
                       Health & Nutrition
@@ -305,7 +309,7 @@ const abcd=()=>{
                     <Text fontWeight={"bold"}>
                       Your Consultant is AquaShop.COM
                     </Text>
-                    {user && user.firstName ? (
+                    {user && user.isLogin ? (
                       <Box
                         display={"flex"}
                         mt={2}
